@@ -1,7 +1,15 @@
 <?php
 
+if ($argc < 3) {
+	echo "You need to enter MIN and MAX values!\n";
+	exit(1);
+}
+
 //Computer guesses a random number between 1 and 100
-$number = mt_rand(1, 5);
+define('MIN', $argv[1]);
+define('MAX', $argv[2]);
+
+$number = mt_rand(MIN, MAX);
 $guesses = 1;
 
 //Prompt user for first guess
@@ -18,10 +26,6 @@ while ($user_guess != $number)
 	{
 		fwrite(STDOUT, "WRONG!!!! Higher...\n");
 	} 
-	elseif ($user_guess >= 6)
-	{
-		fwrite(STDOUT, "WAY TOO HIGH!! Try again...\n");
-	}
 	else
 	{
 		fwrite(STDOUT, "WRONG!!!! Lower...\n");
