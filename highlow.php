@@ -1,7 +1,7 @@
 <?php
 
 //Computer guesses a random number between 1 and 100
-$number = rand(1, 5);
+$number = rand(1, 100);
 
 //Prompt user for first guess
 fwrite(STDOUT, "Guess my number!\n");
